@@ -1,7 +1,12 @@
-echo "# NUR-NATASYA-HANNI-BINTI-TALIB" >> README.md
-git init
-git add README.md
-git commit -m "first commit"
-git branch -M main
-git remote add origin https://github.com/nata5ya/NUR-NATASYA-HANNI-BINTI-TALIB.git
-git push -u origin main
+root = true
+
+[*]
+indent_size = 2
+indent_style = space
+end_of_line = lf
+charset = utf-8
+trim_trailing_whitespace = true
+insert_final_newline = true
+
+[*.py]
+indent_size = 4
