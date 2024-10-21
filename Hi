@@ -5,13 +5,75 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Simple Calculator</title>
     <style>
+        /* Basic styles for calculator layout */
         body {
-            font-family: Arial, sans-serif;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            background-color: #f4f4f4;
+            margin: 0;
+            font-family: Arial, sans-serif;
         }
         .calculator {
-            background-color: #fff
+            background-color: #f2f2f2;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.3);
+        }
+        .calculator input {
+            width: 100%;
+            height: 40px;
+            margin-bottom: 10px;
+            text-align: right;
+        }
+        .calculator button {
+            width: 70px;
+            height: 40px;
+            margin: 5px;
+            font-size: 18px;
+        }
+    </style>
+</head>
+<body>
+    <div class="calculator">
+        <input type="text" id="display" disabled>
+        <br>
+        <button onclick="clearDisplay()">C</button>
+        <button onclick="updateDisplay('/')">/</button>
+        <button onclick="updateDisplay('*')">*</button>
+        <button onclick="updateDisplay('-')">-</button>
+        <br>
+        <button onclick="updateDisplay('7')">7</button>
+        <button onclick="updateDisplay('8')">8</button>
+        <button onclick="updateDisplay('9')">9</button>
+        <button onclick="updateDisplay('+')">+</button>
+        <br>
+        <button onclick="updateDisplay('4')">4</button>
+        <button onclick="updateDisplay('5')">5</button>
+        <button onclick="updateDisplay('6')">6</button>
+        <br>
+        <button onclick="updateDisplay('1')">1</button>
+        <button onclick="updateDisplay('2')">2</button>
+        <button onclick="updateDisplay('3')">3</button>
+        <br>
+        <button onclick="updateDisplay('0')">0</button>
+        <button onclick="updateDisplay('.')">.</button>
+        <button onclick="calculate()">=</button>
+    </div>
+    
+    <script>
+        function updateDisplay(value) {
+            document.getElementById('display').value += value;
+        }
+        
+        function clearDisplay() {
+            document.getElementById('display').value = '';
+        }
+        
+        function calculate() {
+            let result = eval(document.getElementById('display').value);
+            document.getElementById('display').value = result;
+        }
+    </script>
+</body>
+</html>
